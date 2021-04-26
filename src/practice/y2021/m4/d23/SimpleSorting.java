@@ -33,7 +33,7 @@ public class SimpleSorting {
 		}
 		System.out.println(msg.toString());
 		
-		if(args.length >= 20) {
+		if(args.length > 10) {
 			doQuickSort(inputArray);
 		}
 		else {
@@ -66,7 +66,7 @@ public class SimpleSorting {
 		
 		int size = end - start + 1;
 		
-		if(size > 2) {
+		if(size > 10) {
 			
 			//隨機選擇一個數字做基準，將陣列分為比該數字還小和比該數字還大的兩部分。
 			swapElement(input, (int)(Math.random()*size) + start, end);
@@ -104,8 +104,8 @@ public class SimpleSorting {
 			}
 			
 		}
-		else if(size == 2 && input.get(start).compareTo(input.get(end)) > 0) {
-			swapElement(input, start, end);
+		else {
+			doBubbleSort(input, start, end);
 		}
 	}
 	
@@ -116,11 +116,14 @@ public class SimpleSorting {
 	}
 	
 	/**由小排到大的bubbleSort*/
-	private static void doBubbleSort(ArrayList<BigDecimal> input) {
+	public static void doBubbleSort(ArrayList<BigDecimal> input) {
 		System.out.println("執行泡沫排序");
-		int size = input.size();
-		for(int i = 0 ; i < size ; i++) {
-			for(int j = i+1 ; j < size ; j++) {
+		doBubbleSort(input, 0, input.size() - 1);
+	}
+	
+	private static void doBubbleSort(ArrayList<BigDecimal> input, int start, int end) {
+		for(int i = start ; i <= end ; i++) {
+			for(int j = i+1 ; j <= end ; j++) {
 				if(input.get(i).compareTo(input.get(j)) > 0) swapElement(input, i, j);
 			}
 		}
