@@ -1,9 +1,7 @@
 package practice.y2021.m4.d23;
 
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class SimpleSorting {
 
@@ -35,7 +33,12 @@ public class SimpleSorting {
 		}
 		System.out.println(msg.toString());
 		
-		doQuickSort(inputArray);
+		if(args.length >= 20) {
+			doQuickSort(inputArray);
+		}
+		else {
+			doBubbleSort(inputArray);
+		}
 		
 		msg = new StringBuilder("由大排到小:");
 		for(int i = inputArray.size() - 1 ; i >= 0 ; i--) {
@@ -53,8 +56,9 @@ public class SimpleSorting {
 		
 	}
 	
-	//由小排到大的quick sort
+	/**由小排到大的quick sort*/
 	public static void doQuickSort(ArrayList<BigDecimal> input) {
+		System.out.println("執行快速排序");
 		doQuickSort(input, 0, input.size() - 1);
 	}
 
@@ -110,6 +114,17 @@ public class SimpleSorting {
 		input.set(i2, input.get(i1));
 		input.set(i1, i2ele);
 	}
-		
+	
+	/**由小排到大的bubbleSort*/
+	private static void doBubbleSort(ArrayList<BigDecimal> input) {
+		System.out.println("執行泡沫排序");
+		int size = input.size();
+		for(int i = 0 ; i < size ; i++) {
+			for(int j = i+1 ; j < size ; j++) {
+				if(input.get(i).compareTo(input.get(j)) > 0) swapElement(input, i, j);
+			}
+		}
+	}
+	
 }
 
