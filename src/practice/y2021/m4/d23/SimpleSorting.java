@@ -14,7 +14,7 @@ public class SimpleSorting {
 			return;
 		}
 		
-		ArrayList<BigDecimal> inputArray = new ArrayList<>(10);
+		ArrayList<BigDecimal> inputArray = new ArrayList<>(args.length);
 		
 		try {
 			for(int i = 0; i < args.length ; i++) {
