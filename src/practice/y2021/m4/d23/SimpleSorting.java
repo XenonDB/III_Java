@@ -66,6 +66,8 @@ public class SimpleSorting {
 		
 		int size = end - start + 1;
 		
+		if(size < 2) return;
+		
 		if(size > 10) {
 			
 			//隨機選擇一個數字做基準，將陣列分為比該數字還小和比該數字還大的兩部分。
