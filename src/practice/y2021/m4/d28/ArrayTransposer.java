@@ -22,7 +22,7 @@ public class ArrayTransposer {
 	
 	/**
 	 * 可轉置矩陣的條件為：
-	 * 對於任意的i: 0<=i<arr.length,任意的j: i<j<arr.length 皆有以下特性:
+	 * 對於任意的i: 0<=i<arr.length,任意的j: i<=j<arr.length 皆有以下特性:
 	 * arr[i].length >= arr[j].length
 	 * */
 	public static int[][] transpose(int[][] arr) {
