@@ -23,6 +23,8 @@ public abstract class AbatractAccount {
 	}
 	
 	@Override
-	public abstract String toString();
+	public String toString() {
+		return String.format("Account owner: %s, id: %d", getOwner(), getId());
+	}
 	
 }
